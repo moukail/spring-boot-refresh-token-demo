@@ -44,7 +44,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers(HttpMethod.POST,"/auth/**").permitAll()
                 .requestMatchers("/api").permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
             )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
             .exceptionHandling(exceptionHandling -> exceptionHandling.authenticationEntryPoint(exceptionHandler))

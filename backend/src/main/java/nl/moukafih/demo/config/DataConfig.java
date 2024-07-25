@@ -30,7 +30,7 @@ public class DataConfig {
         return (args) -> {
             userRepository.save(new User("admin1@test.com", password,"ROLE_ADMIN"));
 
-            Author author = authorRepository.save(new Author("Juha Hinkula"));
+            Author author = authorRepository.save(new Author("Juha", "Hinkula"));
             bookRepository.save(new Book("Full Stack Development with Spring Boot 3 and React", author));
         };
     }

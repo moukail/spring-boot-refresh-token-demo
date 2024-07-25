@@ -3,6 +3,8 @@ package nl.moukafih.demo.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Entity
 public class Author {
@@ -12,11 +14,16 @@ public class Author {
     private String id;
 
     @Column(nullable = false)
-    private String name;
+    private String firstName;
+    @Column(nullable = false)
+    private String lastName;
+    @Column
+    private Date birthday = null;
 
     public Author(){}
-    public Author(String name){
+    public Author(String firstName, String lastName){
         super();
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 }
